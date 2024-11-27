@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaço D'elas</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <!-- Logo -->
+      <img src="Imagens e Logo/Logo.png" alt="Logo Espaço D'elas" class="logo">
+      
+      <!-- Menu de Navegação -->
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="agendar.html">Agendamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="agendamento" id="agendamento">
+    <div class="container">
+      <div class="agendamento-layout">
+        <!-- Imagem Decorativa -->
+        <div class="imagem-agendamento">
+          <img src="Imagens e Logo/agendamento.png" alt="Imagem decorativa de agendamento">
+        </div>
+  
+        <!-- Formulário -->
+        <form class="form-agendamento" onsubmit="enviarWhatsApp(event);">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="contato">Contato</label>
+            <input type="email" id="contato" name="contato" placeholder="Digite seu e-mail" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="subservico">Serviço Desejado</label>
+            <select id="subservico" name="subservico" required>
+              <option value="">Selecione o serviço</option>
+              <optgroup label="Manicure">
+                <option value="Limpeza e Corte">Limpeza e Corte</option>
+                <option value="Esmaltação Simples">Esmaltação Simples</option>
+                <option value="Esmaltação em Gel">Esmaltação em Gel</option>
+                <option value="Unhas Postiças">Unhas Postiças</option>
+              </optgroup>
+              <optgroup label="Cabelo">
+                <option value="Penteados">Penteados</option>
+                <option value="Progressiva">Progressiva</option>
+                <option value="Relaxamento">Relaxamento</option>
+                <option value="Tintura">Tintura</option>
+                <option value="Corte">Corte</option>
+              </optgroup>
+            </select>
+          </div>
+        
+          <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora" required>
+          </div>
+        
+          <button type="submit" class="btn-agendar">Agendar</button>
+        </form>
+        
+        
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>© 2024 Espaço D'elas. Todos os direitos reservados.</p>
+  </footer>
+  <script src="JS/script.js"></script>
+    </body>
+    </html>  
