@@ -1,6 +1,7 @@
+/* Importação de Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair:opsz@5..1200&display=swap');
-/*Barra de Navegação*/
 
+/* Reset e Estilo Global */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +13,7 @@ body {
   background-color: #fff;
 }
 
-/* Header */
+/* Cabeçalho */
 .header {
   inline-size: 100%;
   block-size: 50px;
@@ -20,7 +21,9 @@ body {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
 }
 
 .container {
@@ -30,7 +33,6 @@ body {
   padding: 0 0px;
 }
 
-/* Logo */
 .logo {
   margin-inline-end: 30px;
   inline-size: 50px;
@@ -39,7 +41,7 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Navegação */
+/* Menu Navegação */
 .nav {
   display: flex;
   gap: 30px;
@@ -58,8 +60,76 @@ body {
   color: #E91E63;
 }
 
-/*Hero*/
+/* Botão de Menu Responsivo */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 101;
+    margin-inline-end: 20px;
+  }
+  
+  .menu-toggle span {
+    inline-size: 25px;
+    block-size: 3px;
+    background-color: #929292;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
 
+/* Ajustes para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: flex; 
+      margin-inline-start: auto;
+    }
+
+    .nav {
+        display: none; 
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        inset-block-start: calc(100% + 10px); 
+        inset-inline-start: 20px; 
+        inset-inline-end: auto; 
+        background-color: #F1E4DC;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px 20px;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      }
+      
+      .nav.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .nav a {
+        text-align: center;
+        font-size: 16px;
+        padding: 8px 0;
+        color: #333;
+        transition: color 0.3s ease;
+      }
+      
+      .nav a:hover {
+        color: #E91E63;
+      }             
+    
+      .nav a:last-child {
+        border-block-end: none;
+      }
+    }
+
+/* Seção de Destaque (Hero) */
 .hero {
     inline-size: 100%;
     block-size: 400px;
@@ -115,52 +185,149 @@ body {
     background-color: #D81B60;
   }
 
- /* Sobre Nós */
+/* Seção de Contato */
+.contato {
+    padding: 60px 20px;
+    background-color: #FBE4E9;
+    text-align: center;
+    border-block-start: 5px solid #E91E63;
+    overflow: hidden; 
+}
+
+.titulo-contato {
+    font-size: 2rem;
+    color: #E91E63;
+    margin-block-end: 30px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.contato-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Contato Itens */
+.contato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-inline-size: 180px; 
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* Invisível inicialmente */
+    transform: translateY(20px); /* Deslocado para baixo */
+    animation: slideUp 1.2s ease forwards; /* Animação ao aparecer */
+}
+
+.contato-item img {
+    inline-size: 50px; 
+    block-size: 50px;
+    margin-block-end: 10px;
+}
+
+.contato-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.contato-item a {
+    color: #E91E63;
+    text-decoration: none;
+    font-weight: bold; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contato-item a:hover {
+    color: #D81B60;
+    transform: scale(1.05); 
+}
+
+.contato-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ /* Rodapé*/
+ .footer {
+    padding: 20px 10px;
+    background-color: #EDE3E9; 
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    border-block-start: 2px solid #E91E63;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-horizontal {
+        flex-direction: column; /* Empilha os itens em telas menores */
+        gap: 30px; /* Ajusta o espaçamento */
+    }
+
+    .contato-item {
+        max-inline-size: 100%; /* Ajusta os itens para a largura total */
+    }
+
+    .contato-item img {
+        inline-size: 40px; /* Ícones menores em telas pequenas */
+        block-size: 40px;
+    }
+
+    .contato-item p {
+        font-size: 0.9rem; /* Texto ligeiramente menor */
+    }
+}
+
+/*Sobre Nós*/
+/* Estilo para a Seção Sobre */
 .sobre {
-    padding: 100px 20px;
+    padding: 60px 20px; /* Reduz o padding */
     background-color: #f1e4dc00;
     color: #333;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-  }
-  
-  .sobre::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #F7D9C4, #F1E4DC);
-    z-index: -2;
-  }
-  
-  .sobre::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.1; 
-    z-index: -1;
   }
   
   .sobre h1 {
-    font-size: 3rem;
-    font-family: 'Playfair Display', serif;
-    margin-block-end: 40px;
+    font-size: 2.5rem; /* Reduz o tamanho da fonte */
+    margin-block-end: 20px; /* Reduz a margem inferior */
     color: #E91E63;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .sobre h1::after {
-    content: '';
-    display: block;
-    inline-size: 60px;
-    block-size: 4px;
-    background: #E91E63;
-    margin: 10px auto 0;
-    border-radius: 2px;
   }
   
   .sobre-content {
@@ -168,57 +335,75 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-inline-size: 1200px;
-    gap: 40px;
+    max-inline-size: 1000px; /* Reduz a largura máxima */
+    gap: 20px; /* Reduz o espaçamento */
   }
   
   .sobre-text {
     flex: 1;
-    max-inline-size: 500px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #555;
-  }
-  
-  .sobre-text p {
-    margin-block-end: 20px;
-  }
-  
-  .sobre-text p span {
-    color: #E91E63;
-    font-weight: bold;
-  }
-  
-  .sobre-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    max-inline-size: 450px; /* Reduz a largura máxima */
+    font-size: 1rem; /* Diminui o tamanho da fonte */
+    line-height: 1.5; /* Reduz o espaçamento entre linhas */
   }
   
   .sobre-image img {
-    inline-size: 400px;
-    block-size: auto;
-    border-radius: 20px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    border: 5px solid #F7D9C4;
+    inline-size: 150px; /* Reduz a largura da imagem */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .sobre-image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-content {
+        flex-direction: column; /* Empilha conteúdo em telas menores */
+        align-items: center;
+    }
+
+    .sobre-image img {
+        inline-size: 80%; /* Redimensiona imagem para telas pequenas */
+    }
+}
+
+/*Depoimentos*/
+.depoimentos {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
   }
   
-  /* Responsividade */
-  @media (max-inline-size: 768px) {
-    .sobre-content {
-      flex-direction: column;
-      align-items: center;
-    }
+  .depoimentos h2 {
+    font-size: 2.5rem;
+    color: #E91E63;
+    margin-block-end: 20px;
+  }
   
-    .sobre-image img {
-      inline-size: 80%;
-    }
+  .depoimentos-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .depoimento {
+    max-inline-size: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .depoimento p {
+    font-size: 1rem;
+    color: #555;
+    margin-block-end: 10px;
+  }
+  
+  .depoimento span {
+    font-size: 0.9rem;
+    color: #E91E63;
+    font-weight: bold;
   }
 
  /* Seção de Serviços */
@@ -227,11 +412,10 @@ body {
     background-color: #F7F3EF;
 }
 
-/* Ajuste na Lista de Serviços */
 .servicos-lista {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Sempre duas colunas */
-    gap: 20px; /* Espaçamento entre os itens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
 }
 
 /* Estilo do item de serviço */
@@ -296,17 +480,17 @@ body {
     margin-block-start: 10px;
     font-size: 1rem;
     color: #555;
-    display: none; /* Oculto por padrão */
+    display: none; 
 }
 
 .servico-item.active .subservicos {
-    display: block; /* Exibe quando ativo */
+    display: block; 
 }
 
 .subservico {
     margin-block-end: 15px;
     padding-inline-start: 10px;
-    border-inline-start: 3px solid #E91E63; /* Barra decorativa */
+    border-inline-start: 3px solid #E91E63; 
 }
 
 .subservico h3 {
@@ -331,7 +515,7 @@ body {
 /* Seção de Promoção */
 .promocao {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #E91E63, #F7D9C4); /* Gradiente destacando a promoção */
+    background: linear-gradient(135deg, #E91E63, #F7D9C4); 
     color: #fff;
     border-radius: 10px;
     margin-block-start: 40px;
@@ -414,7 +598,7 @@ body {
 
 /* Seção de Agendamento */
 .agendamento {
-    padding: 80px 20px; /* Aumenta o espaçamento vertical */
+    padding: 80px 20px; 
     background-color: #F7F3EF;
     display: flex;
     align-items: center;
@@ -423,33 +607,33 @@ body {
 
 .agendamento-layout {
     display: flex;
-    gap: 40px; /* Aumenta o espaçamento entre imagem e formulário */
+    gap: 40px;
     align-items: center;
     justify-content: space-around;
     max-inline-size: 1200px;
     inline-size: 100%;
-    flex-wrap: wrap; /* Ajusta o layout em telas menores */
+    flex-wrap: wrap; 
 }
 
 /* Imagem Decorativa */
 .imagem-agendamento {
-    flex: 1.5; /* Aumenta o peso da imagem */
+    flex: 1.5; 
     position: relative;
-    overflow: hidden; /* Para efeitos visuais */
+    overflow: hidden; 
     border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Reduz intensidade da sombra */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); 
 }
 
 .imagem-agendamento img {
     inline-size: 100%;
     block-size: 100%;
-    object-fit: cover; /* Mantém proporção da imagem */
-    transition: transform 0.6s ease, filter 0.6s ease; /* Animação mais suave */
+    object-fit: cover; 
+    transition: transform 0.6s ease, filter 0.6s ease; 
 }
 
 .imagem-agendamento:hover img {
-    transform: scale(1.05); /* Leve efeito de zoom */
-    filter: brightness(0.9); /* Reduz brilho no hover */
+    transform: scale(1.05); 
+    filter: brightness(0.9);
 }
 
 /* Formulário */
@@ -461,12 +645,12 @@ body {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .form-group label {
     display: block;
-    font-size: 1.1rem; /* Texto maior para melhor legibilidade */
+    font-size: 1.1rem; 
     color: #333;
     margin-block-end: 8px;
 }
@@ -474,7 +658,7 @@ body {
 .form-group input,
 .form-group select {
     inline-size: 100%;
-    padding: 12px; /* Mais espaçamento interno */
+    padding: 12px; 
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
@@ -502,20 +686,20 @@ body {
 
 .btn-agendar:hover {
     background-color: #D81B60;
-    transform: scale(1.05); /* Leve crescimento no hover */
+    transform: scale(1.05); 
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .agendamento-layout {
-        flex-direction: column; /* Empilha os itens em telas menores */
+        flex-direction: column;
         gap: 20px;
     }
 
     .imagem-agendamento {
         flex: none;
         inline-size: 100%;
-        block-size: 300px; /* Altura fixa para imagem em telas menores */
+        block-size: 300px; 
     }
 
     .form-agendamento {
@@ -523,132 +707,5 @@ body {
     }
 }
 
-/* Rodapé Minimalista */
-.footer {
-    padding: 20px 10px;
-    background-color: #EDE3E9; /* Fundo claro */
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-    border-block-start: 2px solid #E91E63;
-}
-
-.footer p {
-    margin: 0;
-}
-
-/* Seção de Contato */
-.contato {
-    padding: 60px 20px;
-    background-color: #FBE4E9; /* Tom pastel sofisticado */
-    text-align: center;
-    border-block-start: 5px solid #E91E63;
-    overflow: hidden; /* Necessário para as animações */
-}
-
-.titulo-contato {
-    font-size: 2rem;
-    color: #E91E63;
-    margin-block-end: 30px;
-    font-family: 'Playfair Display', serif;
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-}
-
-/* Organização Horizontal */
-.contato-horizontal {
-    display: flex;
-    justify-content: center;
-    gap: 50px; /* Espaçamento entre os itens */
-    flex-wrap: wrap; /* Empilha os itens em telas menores */
-}
-
-/* Contato Itens */
-.contato-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-inline-size: 180px; /* Limita a largura máxima */
-    background: #fff; /* Fundo branco para destacar */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0; /* Invisível inicialmente */
-    transform: translateY(20px); /* Deslocado para baixo */
-    animation: slideUp 1.2s ease forwards; /* Animação ao aparecer */
-}
-
-.contato-item img {
-    inline-size: 50px; /* Ícones maiores para destaque */
-    block-size: 50px;
-    margin-block-end: 10px;
-}
-
-.contato-item p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.contato-item a {
-    color: #E91E63;
-    text-decoration: none;
-    font-weight: bold; /* Destaca os links */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.contato-item a:hover {
-    color: #D81B60;
-    transform: scale(1.05); /* Leve aumento no hover */
-}
-
-.contato-item:hover {
-    transform: scale(1.05); /* Efeito de zoom */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .contato-horizontal {
-        flex-direction: column; /* Empilha os itens em telas menores */
-        gap: 30px; /* Ajusta o espaçamento */
-    }
-
-    .contato-item {
-        max-inline-size: 100%; /* Ajusta os itens para a largura total */
-    }
-
-    .contato-item img {
-        inline-size: 40px; /* Ícones menores em telas pequenas */
-        block-size: 40px;
-    }
-
-    .contato-item p {
-        font-size: 0.9rem; /* Texto ligeiramente menor */
-    }
-}
 
 

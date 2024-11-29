@@ -7,14 +7,22 @@
   <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+  <!-- Cabeçalho com Logo e Menu -->
   <header class="header">
     <div class="container">
       <!-- Logo -->
       <img src="Imagens e Logo/Logo.png" alt="Logo Espaço D'elas" class="logo">
       
-      <!-- Menu de Navegação -->
+      <!-- Botão de Menu Responsivo -->
+      <button class="menu-toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegação -->
       <nav class="nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="sobre.html">Sobre</a>
         <a href="servicos.html">Serviços</a>
         <a href="agendar.html">Agendamento</a>
@@ -22,55 +30,52 @@
     </div>
   </header>
 
-  <!--Barner Principal-->
+  <!-- Seção de Destaque (Hero) -->
   <section class="hero">
     <div class="hero-content">
       <h1>Espaço D'elas</h1>
       <p>Beleza e cuidado para você se sentir incrível!</p>
       <a href="agendar.html" class="btn">Agende Agora</a>
     </div>
-    </section>
+  </section>
 
-    <section class="contato" id="contato">
-      <!-- Título no Topo -->
-      <h2 class="titulo-contato">Entre em Contato</h2>
-    
-      <!-- Informações de Contato -->
-      <div class="container contato-horizontal">
-        <!-- Telefone -->
-        <div class="contato-item animado">
-          <img src="Imagens e Logo/telefone.jpg" alt="Ícone Telefone">
-          <p>(44) 99919-4088</p>
-        </div>
-        <!-- WhatsApp -->
-        <div class="contato-item animado">
-          <img src="Imagens e Logo/whats.jpg" alt="Ícone WhatsApp">
-          <p>
-            <a href="https://wa.me/5544999194088?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank">
-              WhatsApp
-            </a>
-          </p>
-        </div>
-        <!-- E-mail -->
-        <div class="contato-item animado">
-          <img src="Imagens e Logo/e-mail.jpg" alt="Ícone E-mail">
-          <p>contato@espacodelas.com</p>
-        </div>
-        <!-- Endereço -->
-        <div class="contato-item animado">
-          <img src="Imagens e Logo/endereco.jpg" alt="Ícone Endereço">
-          <p>Rua Washington Luiz, 400, Marialva</p>
-        </div>
+  <!-- Seção de Contato -->
+  <section class="contato" id="contato">
+    <h2 class="titulo-contato">Entre em Contato</h2>
+    <div class="container contato-horizontal">
+      <!-- Contato: Telefone -->
+      <div class="contato-item animado">
+        <img src="Imagens e Logo/telefone.jpg" alt="Ícone Telefone">
+        <p>(44) 99919-4088</p>
       </div>
-    </section>
-    
+      <!-- Contato: WhatsApp -->
+      <div class="contato-item animado">
+        <img src="Imagens e Logo/whats.jpg" alt="Ícone WhatsApp">
+        <p>
+          <a href="https://wa.me/5544999194088?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank">
+            WhatsApp
+          </a>
+        </p>
+      </div>
+      <!-- Contato: E-mail -->
+      <div class="contato-item animado">
+        <img src="Imagens e Logo/e-mail.jpg" alt="Ícone E-mail">
+        <p>contato@espacodelas.com</p>
+      </div>
+      <!-- Contato: Endereço -->
+      <div class="contato-item animado">
+        <img src="Imagens e Logo/endereco.jpg" alt="Ícone Endereço">
+        <p>Rua Washington Luiz, 400, Marialva</p>
+      </div>
+    </div>
+  </section>
 
-  
-  
+  <!-- Rodapé -->
   <footer class="footer">
     <p>© 2024 Espaço D'elas. Todos os direitos reservados.</p>
   </footer>
-   
+
+  <!-- Script de JavaScript -->
   <script src="JS/script.js"></script>
 </body>
 </html>

@@ -7,45 +7,79 @@
   <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+  <!-- Cabeçalho com Menu de Navegação -->
   <header class="header">
     <div class="container">
       <!-- Logo -->
       <img src="Imagens e Logo/Logo.png" alt="Logo Espaço D'elas" class="logo">
-      
-      <!-- Menu de Navegação -->
+  
+      <!-- Botão de Menu Responsivo -->
+      <button class="menu-toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <!-- Navegação -->
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="sobre.html" class="active">Sobre</a>
         <a href="servicos.html">Serviços</a>
         <a href="agendar.html">Agendamento</a>
       </nav>
     </div>
-</header>
+  </header>
 
-    <section class="sobre">
-        <div class="sobre-container">
-          <h1>Sobre Nós</h1>
-          <div class="sobre-content">
-            <div class="sobre-text">
-              <p>
-                Fernanda começou sua jornada aos 14 anos, atendendo clientes em casa com muito cuidado e dedicação.
-                Com o crescimento de sua clientela, ela decidiu abrir o Espaço D'elas no centro da cidade, criando
-                um ambiente acolhedor e profissional para oferecer os melhores serviços.
-              </p>
-              <p>
-                Nosso objetivo é proporcionar momentos únicos para nossas clientes, unindo qualidade, carinho e um
-                espaço pensado especialmente para você.
-              </p>
-            </div>
-            <div class="sobre-image">
-              <img src="Imagens e Logo/proprietaria.jpg" alt="Equipe do Espaço D'elas">
-            </div>
-          </div>
+  <!-- Seção Sobre -->
+  <section class="sobre">
+    <div class="sobre-container">
+      <h1>Sobre</h1>
+      <div class="sobre-content">
+        <!-- Texto sobre a história do espaço -->
+        <div class="sobre-text">
+          <p>
+            Fernanda começou sua jornada aos 14 anos, atendendo clientes em casa com muito cuidado e dedicação.
+            Com o crescimento de sua clientela, ela decidiu abrir o Espaço D'elas no centro da cidade, criando
+            um ambiente acolhedor e profissional para oferecer os melhores serviços.
+          </p>
+          <p>
+            Nosso objetivo é proporcionar momentos únicos para nossas clientes, unindo qualidade, carinho e um
+            espaço pensado especialmente para você.
+          </p>
         </div>
-      </section>
-      <footer class="footer">
-        <p>© 2024 Espaço D'elas. Todos os direitos reservados.</p>
-      </footer>
-    </body>
+        <!-- Imagem ilustrativa -->
+        <div class="sobre-image">
+          <img src="Imagens e Logo/proprietaria.jpg" alt="Proprietária do Espaço D'elas">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Depoimentos-->
+  <section class="depoimentos">
+    <h2>O Que Nossas Clientes Dizem</h2>
+    <div class="depoimentos-container">
+      <div class="depoimento">
+        <p>"O atendimento no Espaço D'elas é incrível! Sempre saio de lá me sentindo renovada."</p>
+        <span>- Maria Silva</span>
+      </div>
+      <div class="depoimento">
+        <p>"Fernanda e sua equipe são muito profissionais. Amo o cuidado que têm com cada detalhe!"</p>
+        <span>- Juliana Souza</span>
+      </div>
+      <div class="depoimento">
+        <p>"Ambiente acolhedor e serviços de alta qualidade. Recomendo a todas minhas amigas!"</p>
+        <span>- Ana Pereira</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>© 2024 Espaço D'elas. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="JS/script.js"></script>
+</body>
 </html>
- 

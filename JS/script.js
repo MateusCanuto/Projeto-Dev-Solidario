@@ -1,4 +1,5 @@
-// Seleciona todos os itens de serviço
+
+//Ver todos os serviços
 document.querySelectorAll('.servico-item').forEach(item => {
   const button = item.querySelector('.toggle-btn'); // Seleciona o botão dentro do item
 
@@ -15,6 +16,7 @@ document.querySelectorAll('.servico-item').forEach(item => {
   });
 });
 
+//Fomulario de agendamento
 function enviarWhatsApp(event) {
   // Evita o envio padrão do formulário
   event.preventDefault();
@@ -40,3 +42,17 @@ function enviarWhatsApp(event) {
   // Redireciona para o WhatsApp
   window.open(link, "_blank");
 }
+
+//Menu para dispositivos moveis
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active"); // Alterna a classe 'active' no menu
+    });
+  } else {
+    console.error("Menu toggle ou nav não encontrados.");
+  }
+});
