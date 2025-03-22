@@ -1,2 +1,1 @@
-# Projeto-Dev-Solidario
- Site para o salão de beleza espaço d'elas
+<h1 align="center"> Dev Solidario: Espaço D'Elas</h1>
